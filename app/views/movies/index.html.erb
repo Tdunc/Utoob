@@ -1,19 +1,19 @@
-<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %></h2>
-<hr>
 
-
-<h3>Your Movies</h3>
+<h3>UToob Movies</h3>
 
 <ul>
  <% @movies.each do |movie| %>
  <li>
    <h3><%= movie.title %></h3>
+   <br>
    <%= movie.duration %>
+   <br>
    <%= movie.genre %>
+   <br>
    <%= movie.description %>
+   <br>
    <%= movie.trailer %>
-
- </li>
+   <hr>
+  </li>
  <% end %>
 </ul>

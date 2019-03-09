@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'movies#index'
+  root 'playlists#index'
   
   devise_for :users
 
@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
   resources :users do
     resources :comments
+  end
+  resources :users do
+    resources :playlists
   end
 end
 
