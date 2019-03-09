@@ -8,7 +8,7 @@
 
       
       <div class="content">
-        <h3><%= movie.title %></h3>
+        <h3><%= link_to movie.title movie_path(movie) %></h3>
         <br>
         <p>Duration: <%= movie.duration %></p>
         <p>Genre: <%= movie.genre %> </p>
