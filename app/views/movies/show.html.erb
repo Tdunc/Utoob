@@ -1,2 +1,12 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<h1><%= @movie.title %></h1>
+
+<iframe id= "Movie"
+    title= @movie.title
+    width= "300"
+    height= "200"
+    src=<%= @movie.trailer %>
+</iframe>
+<%= button_to 'Like', movie_likes_path(@movie), method: :movie %>
+<p><%= @movie.likes.count %> <%= (@movie.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<h3> Description <h3>
+<p><%= @movie.description %></p>
