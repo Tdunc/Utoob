@@ -1,10 +1,9 @@
 <h3>UToob Movies</h3>
 
-
 <ul>
  <% @movies.each do |movie| %>
  <li>
-   <h3><%= movie.title %></h3>
+   <h3><%= link_to movie.title, movie_path(movie) %></h3>
    <br>
    <%= movie.duration %>
    <br>
@@ -13,7 +12,6 @@
    <%= movie.description %>
    <br>
    <%= movie.trailer %>
-   <hr>
-  </li>
+</li>
  <% end %>
 </ul>

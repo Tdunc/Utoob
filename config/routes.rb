@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :playlists
   end
+  resources :movies do
+    resources :likes
+  end
 end
 
