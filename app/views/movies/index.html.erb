@@ -1,6 +1,19 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
-
-
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
 <h2>Welcome <%= current_user.first_name %></h2>
+<hr>
+
+
+<h3>Your Movies</h3>
+
+<ul>
+ <% @movies.each do |movie| %>
+ <li>
+   <h3><%= movie.title %></h3>
+   <%= movie.duration %>
+   <%= movie.genre %>
+   <%= movie.description %>
+   <%= movie.trailer %>
+
+ </li>
+ <% end %>
+</ul>
