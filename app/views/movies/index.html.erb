@@ -1,19 +1,19 @@
 <br>
-<h1 class ="ui header">UToob Movies</h1>
+<div class="big-head">
+  <h1 class ="ui header">UToob Movies</h1>
+</div>
 <hr>
 
 <div class="ui divided items">
  <% @movies.each do |movie| %>
    <div class="item">
-
-      
       <div class="content">
-        <h3><%= link_to movie.title movie_path(movie) %></h3>
+        <h3><%= link_to movie.title, movie_path(movie) %></h3>
         <br>
-        <p>Duration: <%= movie.duration %></p>
+        <p>Duration: <%= movie.duration %>  </p>
         <p>Genre: <%= movie.genre %> </p>
-        <p>Description: <%= movie.description %> </p>
-        <p>Trailer: <%= movie.trailer %> </p>
+        <p>Description: <a href="<%= movie.description %>"> <%= movie.description %> </a></p>
+        <p>Trailer: <a href="<%= movie.trailer %>"> <%= movie.trailer %> </a></p>
       <div>
     <hr>
   </div>
