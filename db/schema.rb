@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_170517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "duration"
@@ -25,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_03_09_170517) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> Updated routes and views for devise User
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
