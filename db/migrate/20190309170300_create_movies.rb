@@ -7,6 +7,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :trailer
 
+      t.belongs_to :user, foreign_key: true
       t.timestamps
     end
   end
