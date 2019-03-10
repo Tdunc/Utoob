@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action: :set_sub
-  before_action: :set_comment, only: [:show, :edit, :destroy, :update]
+  before_action :set_movie
+  before_action :set_comment, only: [:show, :edit, :destroy, :update]
   def index
     @comment = current_user.comments
   end
@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = current_user.comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
     if @comment.save
-      redirect_to [@movie, @comment] #psudo route
+      redirect_to movie_comments_path(@movie)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to [@movie, @comment]
+      redirect_to dit_movie_comment_path(@movie)
     else
       render :edit
     end

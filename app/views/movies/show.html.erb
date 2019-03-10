@@ -1,5 +1,8 @@
 <h1><%= @movie.title %></h1>
 
+<%= link_to 'Add a comment', new_movie_comment_path(@movie) %>
+<%= link_to 'View comments', movie_comments_path(@movie) %> %>
+<br><br><br>
 <iframe id= "Movie"
     title= @movie.title
     width= "300"
@@ -8,5 +11,8 @@
 </iframe>
 <%= button_to 'Like', movie_likes_path(@movie), method: :movie %>
 <p><%= @movie.likes.count %> <%= (@movie.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<h3> Description <h3>
+<h3> Description </h3>
 <p><%= @movie.description %></p>
+
+
+
